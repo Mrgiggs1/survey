@@ -1,3 +1,9 @@
+<?php
+	include "dbconnection.php";
+	include "recordUser.php";
+	include "recordFavFood.php";
+	include "recordRates.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,9 +96,5 @@ https://templatemo.com/tm-543-breezed
                 </div>
             </div>
         </div>
-    </header>
-    <!-- ***** Header Area End ***** -->
-    
-    <!-- ***** Search Area ***** -->
-   
+    </header>   
 </body>

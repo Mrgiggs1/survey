@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-lg-6 col-xs-12">
                     <div class="left-text-content">
-                        <p>Copyright &copy; 2020 Breezed Co., Ltd. 
+                        <p>Copyright &copy; 2021 Rudolph 
                         
                         - Design: <a rel="nofollow noopener" href="index.php">Survey</a></p>
                     </div>

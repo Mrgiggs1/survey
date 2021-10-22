@@ -16,43 +16,8 @@ include "header.php";
                 </div>
             </div>
           </div>
-          <!-- // Item -->
-          <!-- Item 
-			<div class="item">
-            <div class="img-fill">
-                <img src="assets/images/slide-02.jpg" alt="">
-                <div class="text-content">
-                  <h3>Integrated Marketing Media</h3>
-                  <h5>Best Digital Marketing</h5>
-                  <a href="#" class="main-stroked-button">Read More</a>
-                  <a href="#" class="main-filled-button">Take Action</a>
-                </div>
-            </div>
-          </div>
-		  
-		  
-		  
-          <div class="item">
-            <div class="img-fill">
-                <img src="assets/images/slide-03.jpg" alt="">
-                <div class="text-content">
-                  <h3>High Performance</h3>
-                  <h5>Robust and Speedy</h5>
-                  <a href="#" class="main-stroked-button">Learn More</a>
-                  <a href="#" class="main-filled-button">Get It Now</a>
-                </div>
-            </div>
-          </div>
-          -->
-          <!-- // Item -->
         </div>
     </div>
-    <!-- ***** Main Banner Area End ***** -->
-
-    <!-- ***** About Area Starts ***** --
-    <!-- ***** Contact Us Area Ends ***** -->
-    
-    <!-- ***** Footer Start ***** -->
     <?php
    
 	include "footer.php"
