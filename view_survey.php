@@ -11,8 +11,8 @@ include "header.php";
 							  <thead>
 								<tr>
 								  <th scope="col"></th>
-								  <th scope="col">Content</th>
-								  <th scope="col">Results</th>
+								  <th scope="col"></th>
+								  <th scope="col"></th>
 								</tr>
 							  </thead>
 							  <tbody class="text-white">
@@ -27,8 +27,28 @@ include "header.php";
 								</tr>
 								<tr>
 								  <th scope="row">2</th>
-								  <td>Average age</td>
-								  <td></td>
+								  <td>Average age: <span id="range"></span></td>
+								  <?php
+									$i = 0;
+									$total = "select * from user";
+									$query = mysqli_query($conn,$total);
+									//fill array
+									while($row = mysqli_fetch_assoc($query))
+									{
+										$array[$i] = $row['age'];
+										$i++;
+									}
+									sort($array);
+									$counter = count($array);									
+									for($j=0; $j < $counter;$j++)
+									{
+										$sum = $array[$j].'-'.$array[$j];
+										
+										//echo '<span class="text-white">.'.$array[$j].'  </span>';  //just to see range
+									}
+									?>
+									<td><?php echo $array[$counter/2]; ?> Years</td>
+								  
 								</tr>
 								<tr>
 								  <th scope="row">3</th>
@@ -59,54 +79,82 @@ include "header.php";
 								  <th scope="row">1</th>
 								  <td>Percentage Of People who like Pizza: </td>
 								  <?php
-									$total = "select count(Pizza) as totPiz from fav_food where pizza is not null";
+									$total = "select count(Pizza) as totPiz from fav_food where pizza = 'Pizza'";
 									$query = mysqli_query($conn,$total);
-									$count = mysqli_fetch_assoc($query);?>
-								  <td><?php echo ($count['totPiz']/$allTot['tot'])*100 ?>%</td>
+									$coupz = mysqli_fetch_assoc($query);?>
+								  <td><?php echo round(($coupz['totPiz']/$allTot['tot'])*100,1) ?>%</td>
 								</tr>
 								<tr>
 								  <th scope="row">2</th>
 								  <td>Percentage of People who like Pasta</td>
 								 <?php
-									$tota = "select count(pasta) as totPas from fav_food where pasta is Not NULL";
+									$tota = "select count(pasta) as totPas from fav_food where pasta = 'Pasta'";
 									$query = mysqli_query($conn,$tota);
 									$cou = mysqli_fetch_assoc($query);?>
-								  <td><?php echo ($cou['totPas']/$allTot['tot'])*100 ?>%</td>
+								  <td><?php echo round(($cou['totPas']/$allTot['tot'])*100,1) ?>%</td>
 								</tr>
 								<tr>
 								  <th scope="row">3</th>
 								  <td>Percentage of People who like Pap and Wors</td>
 								  <?php
-									$tota = "select count(pap_wors) as totPap from fav_food where pap_wors is Not NULL";
+									$tota = "select count(pap_wors) as totPap from fav_food where pap_wors = 'Pap and Wors'";
 									$query = mysqli_query($conn,$tota);
 									$check = mysqli_fetch_assoc($query);?>
-								  <td><?php echo ($check['totPap']/$allTot['tot'])*100 ?>%</td>
+								  <td><?php echo round(($check['totPap']/$allTot['tot'])*100,1) ?>%</td>
 								</tr>
 								<tr>
 								<td> </td>
 								</tr>
+								<?php
+									$totalEat = "select count(phoneID) as totRate from rate";
+									$all = mysqli_query($conn,$totalEat);
+									$eatTot = mysqli_fetch_assoc($all);?>
+									
+								<tr> 
+									<td></td>
+									<td></td>
+									<td>1 to Strongly Agree, & 5 to Strongly Desgree</td>
+								</tr>
 								<tr>
 								  <th scope="row">1</th>
 								  <td>People like to eat out</td>
-								  <td></td>
+								  <?php
+									$tota = "select sum(eat_out) as totEat from rate";
+									$query = mysqli_query($conn,$tota);
+									$check = mysqli_fetch_assoc($query);?>
+								  <td><?php echo round(($check['totEat']/$eatTot['totRate']),1)?></td>
 								</tr>
 								<tr>
 								  <th scope="row">2</th>
 								  <td>People like to watch movies</td>
-								  <td></td>
+								  <?php
+									$tota = "select sum(watch_movies) as totMov from rate";
+									$query = mysqli_query($conn,$tota);
+									$check = mysqli_fetch_assoc($query);?>
+								  <td><?php echo round(($check['totMov']/$eatTot['totRate']),1)?></td>
 								</tr>
 								<tr>
 								  <th scope="row">3</th>
 								  <td>People like to watch TV</td>
-								  <td></td>
+								  <?php
+									$tota = "select sum(watch_tv) as totTv from rate";
+									$query = mysqli_query($conn,$tota);
+									$check = mysqli_fetch_assoc($query);?>
+								  <td><?php echo round(($check['totTv']/$eatTot['totRate']),1)?></td>
 								</tr>
 								<tr>
 								  <th scope="row">4</th>
 								  <td>People like to listen to the radio</td>
-								  <td></td>
+								  <?php
+									$tota = "select sum(radio) as totRadio from rate";
+									$query = mysqli_query($conn,$tota);
+									$check = mysqli_fetch_assoc($query);?>
+								  <td><?php echo round(($check['totRadio']/$eatTot['totRate']),1)?></td>
 								</tr>
 							  </tbody>
-							</table>
+							</table><div class="text-align: center">
+									<a href="index.php"><button class="btn btn-primary">OK</button></a>
+								  </div>
                 </div>
             </div>
 	</div>

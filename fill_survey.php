@@ -13,32 +13,32 @@ include "header.php";
 						  <div class="form-group row">
 							<label for="inputEmail3" class="col-sm-2 col-form-label">Surname</label>
 							<div class="col-sm-6">
-							  <input type="text" name="lname" class="form-control" id="inputEmail3" placeholder="Last Name">
+							  <input type="text" required name="lname" class="form-control" id="inputEmail3" placeholder="Last Name" value="<?php if(isset($_POST['lname'])){echo $_POST['lname'];}?>">
 							</div>
 						  </div>
 						  <div class="form-group row">
 							<label for="inputPassword3" class="col-sm-2 col-form-label">First Names</label>
 							<div class="col-sm-6">
-							  <input type="text" name="fname" class="form-control" id="inputPassword3" placeholder="First Name">
+							  <input type="text" required name="fname" class="form-control" id="inputPassword3" placeholder="First Name" value="<?php if(isset($_POST['fname'])){echo $_POST['fname'];}?>">
 							</div>
 						  </div>
 						  <div class="form-group row">
 							<label for="inputPassword3"  class="col-sm-2 col-form-label">Contact Number</label>
 							<div class="col-sm-6">
-							  <input type="text" name="phone" required class="form-control" id="inputPassword3" placeholder="Phone Number">
+							  <input type="text" name="phone" required class="form-control" id="inputPassword3" placeholder="Phone Number" value="<?php if(isset($_POST['phone'])){echo $_POST['phone'];}?>">
 							</div>
 						  </div>
 						  <div class="form-group row">
 							<label for="inputPassword3"  class="col-sm-2 col-form-label" >Date</label>
 							<div class="col-sm-6">
-							  <input type="date" name="curDate" required class="form-control" max="<?php echo date('Y-m-d');?>" min="<?php echo date('Y-m-d');?>" id="inputPassword3" placeholder="Date">
+							  <input type="date" name="curDate" required class="form-control" max="<?php echo date('Y-m-d');?>" min="<?php echo date('Y-m-d');?>" id="inputPassword3" placeholder="Date" value="<?php if(isset($_POST['curDate'])){echo $_POST['curDate'];}?>">
 							</div>
 						  </div>
 						  <div class="form-group row">
 							<label for="inputPassword3"  class="col-sm-2 col-form-label">Age</label>
 							<div class="col-sm-2">
 							  <input type="text" name="age" required class="form-control" id="inputPassword3" placeholder="Age">
-							</div>
+							</div><span class="text-white" id="ageError"></span>
 						  </div>
 						  <br><br>
 						  <div class="form-group" style="text-color: primary;">
@@ -323,7 +323,12 @@ include "header.php";
 		if(mysqli_num_rows($run) > 0)
 		{
 			echo '<script type="text/javascript"> alert("Your Data is already captured!") </script>';
-		}else{
+		}else if($age < 5 || $age > 120)
+		{
+			echo '<script type="text/javascript"> document.getElementById("ageError").innerHTML = "*Enter Age between 5 and 120" </script>';
+		
+		}else
+		{ 
 			addUser($lname,$fname,$phone,$date,$age);
 			addFavFood($phone,$pizza,$pasta,$pap,$chicken,$beef,$other);
 			addRates($phone,$eatOut,$movies,$tv,$fmradio);

@@ -71,8 +71,8 @@ https://templatemo.com/tm-543-breezed
                                     <li><a href="view_survey.php">View Survey</a></li>
                                 </ul>
                             </li>
-                            <li class="scroll-to-section"><a href="survey.html">About Survey</a></li>
-								<div class="search-icon">
+                            <!--<li class="scroll-to-section"><a href="survey.html">About Survey</a></li>
+								<!--<div class="search-icon">
 									<a href="#search"><i class="fa fa-search"></i></a>
 									 <div id="search">
 										<button type="button" class="close">×</button>
@@ -85,7 +85,7 @@ https://templatemo.com/tm-543-breezed
 											</fieldset>
 										</form>
 									</div>
-								</div>
+								</div>-->
 							
                         </ul>        
                         <a class='menu-trigger'>
