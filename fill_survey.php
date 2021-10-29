@@ -332,6 +332,10 @@ include "header.php";
 			addUser($lname,$fname,$phone,$date,$age);
 			addFavFood($phone,$pizza,$pasta,$pap,$chicken,$beef,$other);
 			addRates($phone,$eatOut,$movies,$tv,$fmradio);
+			echo '<script>
+								window.location.href="view_survey.php";
+								</script>
+								';
 		}
 		
 		

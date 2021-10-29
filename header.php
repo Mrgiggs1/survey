@@ -15,7 +15,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>TSHIMOLOGO SURVEY</title>
+    <title>TSHIMOLOGONG SURVEY</title>
 
 <!--
 
@@ -58,7 +58,7 @@ https://templatemo.com/tm-543-breezed
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.php" class="logo">
-                            .TSHIMOLOGO SURVEY
+                            .TSHIMOLOGONG SURVEY
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
