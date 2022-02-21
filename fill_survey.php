@@ -290,7 +290,7 @@ include "header.php";
     
     <!-- ***** Contact Us Area Ends ***** -->
     
-    <!-- ***** Footer Start ***** -->
+    <!-- ******** Footer Start ***** -->
    <?php
 	if(isset($_POST['submit']))
 	{
