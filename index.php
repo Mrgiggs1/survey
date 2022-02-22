@@ -42,7 +42,7 @@ include "header.php";
     <script src="assets/js/lightbox.js"></script> 
     <script src="assets/js/isotope.js"></script> 
     
-    <!-- Global Init -->
+    <!-- Global Initial -->
     <script src="assets/js/custom.js"></script>
 
     <script>
