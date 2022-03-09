@@ -288,7 +288,7 @@ include "header.php";
           <!-- // Item -->
         </div>
     
-    <!-- ***** Contact Us Area Ends ***** -->
+    <!-- ***** Contact Us Area Ends ********* -->
     
     <!-- ******** Footer Start ***** -->
    <?php
